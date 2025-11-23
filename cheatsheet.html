@@ -1,406 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cheat Sheet - Programming Study Hub</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/cheatsheet.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1 class="site-title">Programming Study Hub</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="cpp.html">C++ Basics</a>
-                <a href="algorithms.html">Algorithms</a>
-                <a href="web-dev.html">Web Development</a>
-                <a href="practice.html">Practice Problems</a>
-                <a href="cheatsheet.html">Cheat Sheet</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>C++ Quick Reference</h1>
-                <p>Essential syntax and functions at a glance</p>
-            </div>
-        </section>
-
-        <section class="cheatsheet">
-            <div class="container">
-                <div class="cheat-grid">
-                    <div class="cheat-section">
-                        <h2>Basic Syntax</h2>
-                        <div class="cheat-item">
-                            <h3>Program Structure</h3>
-                            <div class="code-snippet">
-#include &lt;iostream&gt;
-using namespace std;
-
-int main() {
-    // Your code here
-    return 0;
-}
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>Comments</h3>
-                            <div class="code-snippet">
-// Single line comment
-
-/* Multi-line
-   comment */
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>Output</h3>
-                            <div class="code-snippet">
-cout &lt;&lt; "Hello";      // Print text
-cout &lt;&lt; variable;     // Print variable
-cout &lt;&lt; a &lt;&lt; " " &lt;&lt; b; // Multiple values
-cout &lt;&lt; endl;          // New line
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>Input</h3>
-                            <div class="code-snippet">
-int x;
-cin &gt;&gt; x;           // Read one value
-cin &gt;&gt; a &gt;&gt; b;      // Read multiple values
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cheat-section">
-                        <h2>Data Types</h2>
-                        <div class="cheat-item">
-                            <h3>Variables</h3>
-                            <div class="code-snippet">
-int age = 17;
-float price = 9.99;
-double pi = 3.14159;
-char grade = 'A';
-bool passed = true;
-string name = "John";
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>Constants</h3>
-                            <div class="code-snippet">
-const int MAX = 100;
-const float PI = 3.14;
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cheat-section">
-                        <h2>Operators</h2>
-                        <div class="cheat-item">
-                            <h3>Arithmetic</h3>
-                            <div class="code-snippet">
-+ - * / %    // Basic operations
-++           // Increment by 1
---           // Decrement by 1
-+=  -=  *=   // Compound assignment
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>Comparison</h3>
-                            <div class="code-snippet">
-==  !=       // Equal, Not equal
-&lt;   &gt;       // Less, Greater
-&lt;=  &gt;=      // Less or equal, Greater or equal
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>Logical</h3>
-                            <div class="code-snippet">
-&&           // AND
-||           // OR
-!            // NOT
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cheat-section">
-                        <h2>Control Flow</h2>
-                        <div class="cheat-item">
-                            <h3>If Statement</h3>
-                            <div class="code-snippet">
-if (condition) {
-    // code
-} else if (condition) {
-    // code
-} else {
-    // code
-}
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>Switch</h3>
-                            <div class="code-snippet">
-switch(variable) {
-    case 1:
-        // code
-        break;
-    case 2:
-        // code
-        break;
-    default:
-        // code
-}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cheat-section">
-                        <h2>Loops</h2>
-                        <div class="cheat-item">
-                            <h3>For Loop</h3>
-                            <div class="code-snippet">
-for(int i = 0; i &lt; n; i++) {
-    // code
-}
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>While Loop</h3>
-                            <div class="code-snippet">
-while(condition) {
-    // code
-}
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>Do-While Loop</h3>
-                            <div class="code-snippet">
-do {
-    // code
-} while(condition);
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>Loop Control</h3>
-                            <div class="code-snippet">
-break;       // Exit loop
-continue;    // Skip to next iteration
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cheat-section">
-                        <h2>Arrays</h2>
-                        <div class="cheat-item">
-                            <h3>Declaration</h3>
-                            <div class="code-snippet">
-int arr[5];              // Empty array
-int arr[5] = {1,2,3,4,5}; // With values
-int arr[] = {1,2,3};     // Auto size
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>Access Elements</h3>
-                            <div class="code-snippet">
-arr[0] = 10;    // Set value
-int x = arr[0]; // Get value
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>Common Operations</h3>
-                            <div class="code-snippet">
-// Loop through array
-for(int i = 0; i &lt; n; i++) {
-    cout &lt;&lt; arr[i];
+.cheatsheet {
+    padding: 50px 0;
+    background: #f9f9f9;
 }
 
-// Find size
-int size = sizeof(arr) / sizeof(arr[0]);
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cheat-section">
-                        <h2>Strings</h2>
-                        <div class="cheat-item">
-                            <h3>String Operations</h3>
-                            <div class="code-snippet">
-string s = "Hello";
-s.length()       // Get length
-s[0]             // Access character
-s + " World"     // Concatenation
-s.substr(0,3)    // Substring
-s.find("ll")     // Find substring
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>C-Style Strings</h3>
-                            <div class="code-snippet">
-char str[100];
-strlen(str)      // Length
-strcpy(s1, s2)   // Copy
-strcat(s1, s2)   // Concatenate
-strcmp(s1, s2)   // Compare
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cheat-section">
-                        <h2>Functions</h2>
-                        <div class="cheat-item">
-                            <h3>Function Declaration</h3>
-                            <div class="code-snippet">
-returnType name(parameters) {
-    // code
-    return value;
+.cheat-grid {
+    display: grid;
+    gap: 30px;
 }
 
-// Example
-int add(int a, int b) {
-    return a + b;
+.cheat-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-                            </div>
-                        </div>
 
-                        <div class="cheat-item">
-                            <h3>Void Function</h3>
-                            <div class="code-snippet">
-void printMessage() {
-    cout &lt;&lt; "Hello";
-    // No return
+.cheat-section h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
 }
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="cheat-section">
-                        <h2>Math Functions</h2>
-                        <div class="cheat-item">
-                            <h3>Common Math</h3>
-                            <div class="code-snippet">
-#include &lt;cmath&gt;
-
-abs(x)       // Absolute value
-pow(x, y)    // x to power y
-sqrt(x)      // Square root
-ceil(x)      // Round up
-floor(x)     // Round down
-max(a, b)    // Maximum
-min(a, b)    // Minimum
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cheat-section">
-                        <h2>Common Patterns</h2>
-                        <div class="cheat-item">
-                            <h3>Swap Two Variables</h3>
-                            <div class="code-snippet">
-int temp = a;
-a = b;
-b = temp;
-                            </div>
-                        </div>
-
-                        <div class="cheat-item">
-                            <h3>Find Max in Array</h3>
-                            <div class="code-snippet">
-int max = arr[0];
-for(int i = 1; i &lt; n; i++) {
-    if(arr[i] &gt; max) {
-        max = arr[i];
-    }
+.cheat-item {
+    margin-bottom: 25px;
 }
-                            </div>
-                        </div>
 
-                        <div class="cheat-item">
-                            <h3>Sum of Array</h3>
-                            <div class="code-snippet">
-int sum = 0;
-for(int i = 0; i &lt; n; i++) {
-    sum += arr[i];
+.cheat-item h3 {
+    font-size: 18px;
+    color: #34495e;
+    margin-bottom: 10px;
 }
-                            </div>
-                        </div>
 
-                        <div class="cheat-item">
-                            <h3>Check Even/Odd</h3>
-                            <div class="code-snippet">
-if(num % 2 == 0) {
-    // Even
-} else {
-    // Odd
+.code-snippet {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre;
 }
-                            </div>
-                        </div>
 
-                        <div class="cheat-item">
-                            <h3>Reverse Array</h3>
-                            <div class="code-snippet">
-for(int i = 0; i &lt; n/2; i++) {
-    int temp = arr[i];
-    arr[i] = arr[n-1-i];
-    arr[n-1-i] = temp;
+.tips-list {
+    display: grid;
+    gap: 15px;
 }
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="cheat-section">
-                        <h2>Tips & Tricks</h2>
-                        <div class="tips-list">
-                            <div class="tip-item">
-                                <h4>Array Index</h4>
-                                <p>Arrays start at index 0. Last element is at n-1.</p>
-                            </div>
-                            <div class="tip-item">
-                                <h4>Integer Division</h4>
-                                <p>5/2 = 2 (not 2.5). Use floats for decimals.</p>
-                            </div>
-                            <div class="tip-item">
-                                <h4>Semicolons</h4>
-                                <p>Don't forget semicolons after statements!</p>
-                            </div>
-                            <div class="tip-item">
-                                <h4>Case Sensitivity</h4>
-                                <p>C++ is case sensitive. 'a'  'A'</p>
-                            </div>
-                            <div class="tip-item">
-                                <h4>Comparison</h4>
-                                <p>Use == for comparison, = for assignment</p>
-                            </div>
-                            <div class="tip-item">
-                                <h4>Braces</h4>
-                                <p>Always match opening and closing braces</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+.tip-item {
+    padding: 15px;
+    background: #e3f2fd;
+    border-left: 4px solid #3498db;
+    border-radius: 5px;
+}
 
-           <div class="container">
-            <p>Programming Study Hub - Educational Resource for Students</p>
-            <p>2025</p>
-        </div>
-    </footer>
-</body>
-</html>
+.tip-item h4 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.tip-item p {
+    color: #555;
+    margin: 0;
+    font-size: 14px;
+}
