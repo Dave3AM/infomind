@@ -1,0 +1,414 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures - Programming Study Hub</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/content.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title">Programming Study Hub</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="cpp.html">C++ Basics</a>
+                <a href="algorithms.html">Algorithms</a>
+                <a href="web-dev.html">Web Development</a>
+                <a href="practice.html">Practice Problems</a>
+                <a href="cheatsheet.html">Cheat Sheet</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Data Structures</h1>
+                <p>Understanding how to organize and store data efficiently</p>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <div class="sidebar">
+                    <h3>Contents</h3>
+                    <ul class="content-nav">
+                        <li><a href="#arrays">Arrays</a></li>
+                        <li><a href="#strings">Strings</a></li>
+                        <li><a href="#matrices">Matrices</a></li>
+                        <li><a href="#structs">Structures</a></li>
+                    </ul>
+                </div>
+
+                <div class="main-content">
+                    <section id="arrays">
+                        <h2>Arrays</h2>
+                        <p>Arrays store multiple values of the same type in contiguous memory locations.</p>
+
+                        <h3>Declaration and Initialization</h3>
+                        <div class="code-block">
+// Empty array
+int numbers[5];
+
+// With values
+int scores[5] = {85, 90, 78, 92, 88};
+
+// Auto size
+int ages[] = {17, 18, 16};
+
+// Accessing elements
+int first = scores[0];  // 85
+scores[1] = 95;         // Modify element
+                        </div>
+
+                        <h3>Multi-dimensional Arrays</h3>
+                        <div class="code-block">
+// 2D array (matrix)
+int matrix[3][3] = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// Access element
+int element = matrix[1][2];  // 6
+
+// Loop through 2D array
+for(int i = 0; i < 3; i++) {
+    for(int j = 0; j < 3; j++) {
+        cout << matrix[i][j] << " ";
+    }
+    cout << endl;
+}
+                        </div>
+
+                        <h3>Common Array Operations</h3>
+                        <div class="code-block">
+int arr[5] = {3, 1, 4, 1, 5};
+int n = 5;
+
+// Find maximum
+int maxVal = arr[0];
+for(int i = 1; i < n; i++) {
+    if(arr[i] > maxVal) {
+        maxVal = arr[i];
+    }
+}
+
+// Find minimum
+int minVal = arr[0];
+for(int i = 1; i < n; i++) {
+    if(arr[i] < minVal) {
+        minVal = arr[i];
+    }
+}
+
+// Calculate average
+int sum = 0;
+for(int i = 0; i < n; i++) {
+    sum += arr[i];
+}
+float average = (float)sum / n;
+
+// Search for element
+int target = 4;
+int position = -1;
+for(int i = 0; i < n; i++) {
+    if(arr[i] == target) {
+        position = i;
+        break;
+    }
+}
+
+// Reverse array
+for(int i = 0; i < n/2; i++) {
+    int temp = arr[i];
+    arr[i] = arr[n-1-i];
+    arr[n-1-i] = temp;
+}
+                        </div>
+                    </section>
+
+                    <section id="strings">
+                        <h2>Strings</h2>
+                        <p>Strings are sequences of characters used to store text.</p>
+
+                        <h3>C++ String Class</h3>
+                        <div class="code-block">
+#include &lt;string&gt;
+
+string name = "John";
+string greeting = "Hello";
+
+// Concatenation
+string message = greeting + " " + name;  // "Hello John"
+
+// Length
+int len = name.length();  // 4
+
+// Accs characters
+char first = name[0];  // 'J'
+
+// Substring
+string sub = name.substr(0, 2);  // "Jo"
+
+// Find
+int pos = name.find("oh");  // 1
+
+// Compare
+if(name == "John") {
+    cout << "Equal";
+}
+                        </div>
+
+                        <h3>C-Style Strings</h3>
+                        <div class="code-block">
+#include &lt;cstring&gt;
+
+char str[100] = "Hello";
+
+// Length
+int len = strlen(str);
+
+// Copy
+char copy[100];
+strcpy(copy, str);
+
+// Concatenate
+strcat(str, " World");  // "Hello World"
+
+// Compare
+if(strcmp(str1, str2) == 0) {
+    // Strings are equal
+}
+                        </div>
+
+                        <h3>String Operations</h3>
+                        <div class="code-block">
+string text = "programming";
+
+// Convert to uppercase
+for(int i = 0; i < text.length(); i++) {
+    text[i] = toupper(text[i]);
+}
+// Result: "PROGRAMMING"
+
+// Count vowels
+int vowels = 0;
+for(int i = 0; i < text.length(); i++) {
+    char c = tolower(text[i]);
+    if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+        vowels++;
+    }
+}
+
+// Reverse string
+string reversed = "";
+for(int i = text.length()-1; i >= 0; i--) {
+    reversed += text[i];
+}
+
+// Check palindrome
+bool isPalindrome = true;
+int len = text.length();
+for(int i = 0; i < len/2; i++) {
+    if(text[i] != text[len-1-i]) {
+        isPalindrome = false;
+        break;
+    }
+}
+                        </div>
+                    </section>
+
+                    <section id="matrices">
+                        <h2>Matrices (2D Arrays)</h2>
+                        <p>Matrices are two-dimensional arrays useful for representing grids, tables, and mathematical operations.</p>
+
+                        <h3>Matrix Declaration</h3>
+                        <div class="code-block">
+// Declare matrix
+int matrix[3][4];
+
+// Initialize matrix
+int grid[3][3] = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// Read matrix
+int n, m;
+cin >> n >> m;
+int arr[n][m];
+
+for(int i = 0; i < n; i++) {
+    for(int j = 0; j < m; j++) {
+        cin >> arr[i][j];
+    }
+}
+                        </div>
+
+                        <h3>Matrix Operations</h3>
+                        <div class="code-block">
+int matrix[3][3] = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+// Sum of all elements
+int sum = 0;
+for(int i = 0; i < 3; i++) {
+    for(int j = 0; j < 3; j++) {
+        sum += matrix[i][j];
+    }
+}
+
+// Main diagonal sum (i == j)
+int diagSum = 0;
+for(int i = 0; i < 3; i++) {
+    diagSum += matrix[i][i];
+}
+// 1 + 5 + 9 = 15
+
+// Secondary diagonal sum
+int secDiagSum = 0;
+for(int i = 0; i < 3; i++) {
+    secDiagSum += matrix[i][3-1-i];
+}
+// 3 + 5 + 7 = 15
+
+// Transpose matrix (swap rows and columns)
+int transposed[3][3];
+for(int i = 0; i < 3; i++) {
+    for(int j = 0; j < 3; j++) {
+        transposed[j][i] = matrix[i][j];
+    }
+}
+                        </div>
+
+                        <h3>Matrix Traversals</h3>
+                        <div class="code-block">
+// Row by row
+for(int i = 0; i < n; i++) {
+    for(int j = 0; j < m; j++) {
+        cout << matrix[i][j] << " ";
+    }
+}
+
+// Column by column
+for(int j = 0; j < m; j++) {
+    for(int i = 0; i < n; i++) {
+        cout << matrix[i][j] << " ";
+    }
+}
+
+// Border elements
+for(int i = 0; i < n; i++) {
+    for(int j = 0; j < m; j++) {
+        if(i == 0 || i == n-1 || j == 0 || j == m-1) {
+            cout << matrix[i][j] << " ";
+        }
+    }
+}
+                        </div>
+                    </section>
+
+                    <section id="structs">
+                        <h2>Structures</h2>
+                        <p>Structures allow you to group different data types together.</p>
+
+                        <h3>Defining a Structure</h3>
+                        <div class="code-block">
+struct Student {
+    string name;
+    int age;
+    float grade;
+};
+
+// Create a student
+Student s1;
+s1.name = "John";
+s1.age = 17;
+s1.grade = 9.5;
+
+// Initialize directly
+Student s2 = {"Maria", 16, 9.8};
+
+// Access members
+cout << s1.name << " is " << s1.age << " years old";
+                        </div>
+
+                        <h3>Array of Structures</h3>
+                        <div class="code-block">
+struct Student {
+    string name;
+    int age;
+    float grade;
+};
+
+// Array of students
+Student classroom[30];
+
+// Input students
+int n;
+cin >> n;
+for(int i = 0; i < n; i++) {
+    cin >> classroom[i].name;
+    cin >> classroom[i].age;
+    cin >> classroom[i].grade;
+}
+
+// Find student with highest grade
+int bestIndex = 0;
+for(int i = 1; i < n; i++) {
+    if(classroom[i].grade > classroom[bestIndex].grade) {
+        bestIndex = i;
+    }
+}
+
+cout << "Best student: " << classroom[bestIndex].name;
+                        </div>
+
+                        <h3>Practical Example: Point Structure</h3>
+                        <div class="code-block">
+#include &lt;cmath&gt;
+
+struct Point {
+    int x;
+    int y;
+};
+
+// Calculate distance between two points
+float distance(Point p1, Point p2) {
+    int dx = p2.x - p1.x;
+    int dy = p2.y - p1.y;
+    return sqrt(dx*dx + dy*dy);
+}
+
+int main() {
+    Point a = {0, 0};
+    Point b = {3, 4};
+    
+    float dist = distance(a, b);
+    cout << "Distance: " << dist;  // 5.0
+    
+    return 0;
+}
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Programming Study Hub - Educational Resource for Students</p>
+            <p>2024</p>
+        </div>
+    </footer>
+</body>
+</html>

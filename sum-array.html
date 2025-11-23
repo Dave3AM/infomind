@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Array - Practice Problem</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/problem.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title">Programming Study Hub</h1>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../practice.html">Practice Problems</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="problem-container">
+            <div class="problem-header-section">
+                <h1>Sum of Array Elements</h1>
+                <span class="difficulty-badge easy">Easy</span>
+            </div>
+
+            <section class="problem-description">
+                <h2>Problem Statement</h2>
+                <p>Given an array of n integers, calculate and print the sum of all elements.</p>
+                
+                <h3>Input Format</h3>
+                <ul>
+                    <li>First line: an integer n (1  n  1000)</li>
+                    <li>Second line: n integers separated by spaces</li>
+                </ul>
+                
+                <h3>Output Format</h3>
+                <p>Print a single integer - the sum of all array elements.</p>
+                
+                <h3>Examples</h3>
+                <div class="example-box">
+                    <div class="example">
+                        <strong>Input:</strong>
+                        <pre>5
+1 2 3 4 5</pre>
+                        <strong>Output:</strong>
+                        <pre>15</pre>
+                    </div>
+                    
+                    <div class="example">
+                        <strong>Input:</strong>
+                        <pre>4
+10 -5 3 7</pre>
+                        <strong>Output:</strong>
+                        <pre>15</pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="solution">
+                <h2>Solution Explanation</h2>
+                <p>This problem requires basic array traversal and accumulation:</p>
+                <ol>
+                    <li>Read the number of elements n</li>
+                    <li>Read n elements into an array</li>
+                    <li>Initialize a sum variable to 0</li>
+                    <li>Loop through array and add each element to sum</li>
+                    <li>Print the final sum</li>
+                </ol>
+                
+                <h3>C++ Solution</h3>
+                <div class="code-solution">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cin &gt;&gt; n;
+    
+    int arr[n];
+    
+    // Read array elements
+    for(int i = 0; i &lt; n; i++) {
+        cin &gt;&gt; arr[i];
+    }
+    
+    // Calculate sum
+    int sum = 0;
+    for(int i = 0; i &lt; n; i++) {
+        sum += arr[i];
+    }
+    
+    // Output result
+    cout &lt;&lt; sum;
+    
+    return 0;
+}
+                </div>
+                
+                <h3>Step by Step</h3>
+                <p><strong>For input: 5, [1, 2, 3, 4, 5]</strong></p>
+                <ul>
+                    <li>Initialize sum = 0</li>
+                    <li>i=0: sum = 0 + 1 = 1</li>
+                    <li>i=1: sum = 1 + 2 = 3</li>
+                    <li>i=2: sum = 3 + 3 = 6</li>
+                    <li>i=3: sum = 6 + 4 = 10</li>
+                    <li>i=4: sum = 10 + 5 = 15</li>
+                    <li>Output: 15</li>
+                </ul>
+                
+                <h3>Time Complexity</h3>
+                <p>O(n) - We traverse the array once</p>
+                
+                <h3>Space Complexity</h3>
+                <p>O(n) - We store n elements in the array</p>
+            </section>
+
+            <section class="hints">
+                <h2>Hints</h2>
+                <details>
+                    <summary>Hint 1</summary>
+                    <p>You need to use a loop to go through each element of the array.</p>
+                </details>
+                <details>
+                    <summary>Hint 2</summary>
+                    <p>Initialize a variable to 0 before the loop starts, then add each array element to it.</p>
+                </details>
+                <details>
+                    <summary>Hint 3</summary>
+                    <p>Use the += operator to add each element: sum += arr[i];</p>
+                </details>
+            </section>
+
+            <section class="related">
+                <h2>Related Problems</h2>
+                <ul>
+                    <li><a href="find-max.html">Find Maximum Element</a></li>
+                    <li><a href="count-vowels.html">Count Even Numbers</a></li>
+                    <li><a href="average.html">Calculate Average</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Programming Study Hub - Educational Resource for Students</p>
+            <p>2024</p>
+        </div>
+    </footer>
+</body>
+</html>
