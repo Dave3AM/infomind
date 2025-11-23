@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Basics - Programming Study Hub</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/content.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title">Programming Study Hub</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="cpp.html">C++ Basics</a>
+                <a href="algorithms.html">Algorithms</a>
+                <a href="web-dev.html">Web Development</a>
+                <a href="practice.html">Practice Problems</a>
+                <a href="cheatsheet.html">Cheat Sheet</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>C++ Programming Basics</h1>
+                <p>Essential concepts and syntax for C++ programming</p>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <div class="sidebar">
+                    <h3>Contents</h3>
+                    <ul class="content-nav">
+                        <li><a href="#intro">Introduction</a></li>
+                        <li><a href="#variables">Variables</a></li>
+                        <li><a href="#operators">Operators</a></li>
+                        <li><a href="#conditions">Conditions</a></li>
+                        <li><a href="#loops">Loops</a></li>
+                        <li><a href="#arrays">Arrays</a></li>
+                        <li><a href="#functions">Functions</a></li>
+                    </ul>
+                </div>
+
+                <div class="main-content">
+                    <section id="intro">
+                        <h2>Introduction to C++</h2>
+                        <p>C++ is a powerful programming language used for system programming, game development, and competitive programming. It's an extension of the C language with additional features like object-oriented programming.</p>
+                        
+                        <h3>Your First Program</h3>
+                        <div class="code-block">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello World!";
+    return 0;
+}
+                        </div>
+                        <p><strong>Explanation:</strong></p>
+                        <ul>
+                            <li><code>#include &lt;iostream&gt;</code> - imports input/output library</li>
+                            <li><code>using namespace std;</code> - allows us to use cout without std:: prefix</li>
+                            <li><code>int main()</code> - the main function where program starts</li>
+                            <li><code>cout</code> - prints output to screen</li>
+                            <li><code>return 0;</code> - ends the program successfully</li>
+                        </ul>
+                    </section>
+
+                    <section id="variables">
+                        <h2>Variables and Data Types</h2>
+                        <p>Variables are containers for storing data values. In C++, you must declare the variable type.</p>
+                        
+                        <h3>Common Data Types</h3>
+                        <table class="data-table">
+                            <tr>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                            <tr>
+                                <td>int</td>
+                                <td>Integer numbers</td>
+                                <td>int age = 17;</td>
+                            </tr>
+                            <tr>
+                                <td>float</td>
+                                <td>Decimal numbers</td>
+                                <td>float price = 9.99;</td>
+                            </tr>
+                            <tr>
+                                <td>double</td>
+                                <td>Large decimal numbers</td>
+                                <td>double pi = 3.14159;</td>
+                            </tr>
+                            <tr>
+                                <td>char</td>
+                                <td>Single character</td>
+                                <td>char grade = 'A';</td>
+                            </tr>
+                            <tr>
+                                <td>bool</td>
+                                <td>True or False</td>
+                                <td>bool passed = true;</td>
+                            </tr>
+                            <tr>
+                                <td>string</td>
+                                <td>Text</td>
+                                <td>string name = "John";</td>
+                            </tr>
+                        </table>
+
+                        <h3>Example Program</h3>
+                        <div class="code-block">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int age = 17;
+    string name = "Maria";
+    float grade = 9.5;
+    
+    cout &lt;&lt; "
