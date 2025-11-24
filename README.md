@@ -5,4 +5,3 @@
          style="width: 100%;">
   </a>
 </div>
-VERY VERTY

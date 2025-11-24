@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms - Programming Study Hub</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/content.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title">Programming Study Hub</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="cpp.html">C++ Basics</a>
+                <a href="algorithms.html">Algorithms</a>
+                <a href="web-dev.html">Web Development</a>
+                <a href="practice.html">Practice Problems</a>
+                <a href="cheatsheet.html">Cheat Sheet</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Algorithms</h1>
+                <p>Learn sorting, searching, and problem-solving techniques</p>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <div class="sidebar">
+                    <h3>Contents</h3>
+                    <ul class="content-nav">
+                        <li><a href="#sorting">Sorting Algorithms</a></li>
+                        <li><a href="#searching">Searching Algorithms</a></li>
+                        <li><a href="#recursion">Recursion</a></li>
+                        <li><a href="#complexity">Time Complexity</a></li>
+                    </ul>
+                </div>
+
+                <div class="main-content">
+                    <section id="sorting">
+                        <h2>Sorting Algorithms</h2>
+                        <p>Sorting arranges elements in a specific order (ascending or descending).</p>
+
+                        <h3>Bubble Sort</h3>
+                        <p>Compares adjacent elements and swaps them if they're in wrong order.</p>
+                        <div class="code-block">
+void bubbleSort(int arr[], int n) {
+    for(int i = 0; i < n-1; i++) {
+        for(int j = 0; j < n-i-1; j++) {
+            if(arr[j] > arr[j+1]) {
+                // Swap
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+
+// Example usage
+int main() {
+    int arr[] = {64, 34, 25, 12, 22};
+    int n = 5;
+    
+    bubbleSort(arr, n);
+    
+    // Print sorted array
+    for(int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    // Output: 12 22 25 34 64
+    
+    return 0;
+}
+                        </div>
+                        <p><strong>How it works:</strong></p>
+                        <ul>
+                            <li>Compare first two elements, swap if needed</li>
+                            <li>Move to next pair and repeat</li>
+                            <li>After each pass, largest element reaches end</li>
+                            <li>Time Complexity: O(n)</li>
+                        </ul>
+
+                        <h3>Selection Sort</h3>
+                        <p>Finds minimum element and places it at beginning.</p>
+                        <div class="code-block">
+void selectionSort(int arr[], int n) {
+    for(int i = 0; i < n-1; i++) {
+        int minIndex = i;
+        
+        // Find minimum element
+        for(int j = i+1; j < n; j++) {
+            if(arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        
+        // Swap minimum with first element
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+}
+                        </div>
+
+                        <h3>Insertion Sort</h3>
+                        <p>Builds sorted array one element at a time.</p>
+                        <div class="code-block">
+void insertionSort(int arr[], int n) {
+    for(int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        
+        // Move elements greater than key
+        while(j >= 0 && arr[j] > key) {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j+1] = key;
+    }
+}
+                        </div>
+                    </section>
+
+                    <section id="searching">
+                        <h2>Searching Algorithms</h2>
+                        
+                        <h3>Linear Search</h3>
+                        <p>Check every element until target is found.</p>
+                        <div class="code-block">
+int linearSearch(int arr[], int n, int target) {
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == target) {
+            return i;  // Return position
+        }
+    }
+    return -1;  // Not found
+}
+
+// Example
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
+    int n = 5;
+    int target = 30;
+    
+    int position = linearSearch(arr, n, target);
+    
+    if(position != -1) {
+        cout << "Found at position " << position;
+    } else {
+        cout << "Not found";
+    }
+    
+    return 0;
+}
+                        </div>
+                        <p><strong>Time Complexity:</strong> O(n) - checks each element once</p>
+
+                        <h3>Binary Search</h3>
+                        <p>Works only on sorted arrays. Divides search space in half each time.</p>
+                        <div class="code-block">
+int binarySearch(int arr[], int n, int target) {
+    int left = 0;
+    int right = n - 1;
+    
+    while(left <= right) {
+        int mid = (left + right) / 2;
+        
+        if(arr[mid] == target) {
+            return mid;  // Found
+        }
+        else if(arr[mid] < target) {
+            left = mid + 1;  // Search right half
+        }
+        else {
+            right = mid - 1;  // Search left half
+        }
+    }
+    
+    return -1;  // Not found
+}
+
+// Example
+int main() {
+    int arr[] = {10, 20, 30, 40, 50, 60, 70};
+    int n = 7;
+    int target = 40;
+    
+    int position = binarySearch(arr, n, target);
+    cout << "Found at position " << position;
+    // Output: Found at position 3
+    
+    return 0;
+}
+                        </div>
+                        <p><strong>How Binary Search Works:</strong></p>
+                        <ul>
+                            <li>Start with entire sorted array</li>
+                            <li>Check middle element</li>
+                            <li>If target equals middle, done!</li>
+                            <li>If target is smaller, search left half</li>
+                            <li>If target is larger, search right half</li>
+                            <li>Time Complexity: O(log n) - much faster than linear search</li>
+                        </ul>
+
+                        <h3>Binary Search Step by Step Example</h3>
+                        <p>Searching for 40 in array [10, 20, 30, 40, 50, 60, 70]:</p>
+                        <div class="code-block">
+Step 1: left=0, right=6, mid=3
+        arr[3]=40  Found!
+        
+Searching for 60:
+Step 1: left=0, right=6, mid=3
+        arr[3]=40 < 60  search right
+Step 2: left=4, right=6, mid=5
+        arr[5]=60  Found!
+                        </div>
+                    </section>
+
+                    <section id="recursion">
+                        <h2>Recursion</h2>
+                        <p>A function that calls itself to solve smaller versions of the same problem.</p>
+
+                        <h3>Basic Recursion Structure</h3>
+                        <div class="code-block">
+returnType functionName(parameters) {
+    // Base case - stops recursion
+    if(condition) {
+        return value;
+    }
+    
+    // Recursive case 
+    return functionName(modified_parameters);
+}
+                        </div>
+
+                        <h3>Example: Factorial</h3>
+                        <p>Factorial of n: n! = n  (n-1)  (n-2)  ...  1</p>
+                        <div class="code-block">
+int factorial(int n) {
+    // Base case
+    if(n == 0 || n == 1) {
+        return 1;
+    }
+    
+    // Recursive case
+    return n * factorial(n - 1);
+}
+
+// Example usage
+int main() {
+    cout << factorial(5);  // Output: 120
+    // 5! = 5  4  3  2  1 = 120
+    
+    return 0;
+}
+                        </div>
+
+                        <h3>How Recursion Works (factorial(5)):</h3>
+                        <div class="code-block">
+factorial(5) = 5  factorial(4)
+factorial(4) = 4  factorial(3)
+factorial(3) = 3  factorial(2)
+factorial(2) = 2  factorial(1)
+factorial(1) = 1 (base case)
+
+Now going back:
+factorial(2) = 2  1 = 2
+factorial(3) = 3  2 = 6
+factorial(4) = 4  6 = 24
+factorial(5) = 5  24 = 120
+                        </div>
+
+                        <h3>Example: Fibonacci</h3>
+                        <p>Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13...</p>
+                        <div class="code-block">
+int fibonacci(int n) {
+    // Base cases
+    if(n == 0) return 0;
+    if(n == 1) return 1;
+    
+    // Recursive case
+    return fibonacci(n-1) + fibonacci(n-2);
+}
+
+// Example
+int main() {
+    for(int i = 0; i < 10; i++) {
+        cout << fibonacci(i) << " ";
+    }
+    // Output: 0 1 1 2 3 5 8 13 21 34
+    
+    return 0;
+}
+                        </div>
+
+                        <h3>Example: Sum of Digits</h3>
+                        <div class="code-block">
+int sumDigits(int n) {
+    // Base case
+    if(n == 0) {
+        return 0;
+    }
+    
+    // Recursive case
+    return (n % 10) + sumDigits(n / 10);
+}
+
+// Example
+int main() {
+    cout << sumDigits(1234);  // Output: 10
+    // 1 + 2 + 3 + 4 = 10
+    
+    return 0;
+}
+                        </div>
+
+                        <h3>Example: Power Function</h3>
+                        <div class="code-block">
+int power(int base, int exp) {
+    // Base case
+    if(exp == 0) {
+        return 1;
+    }
+    
+    // Recursive case
+    return base * power(base, exp - 1);
+}
+
+// Example
+int main() {
+    cout << power(2, 5);  // Output: 32
+    // 2^5 = 2  2  2  2  2 = 32
+    
+    return 0;
+}
+                        </div>
+
+                        <h3>Important Recursion Tips</h3>
+                        <ul>
+                            <li>Always have a base case to stop recursion</li>
+                            <li>Each recursive call should move towards base case</li>
+                            <li>Recursion uses more memory than loops</li>
+                            <li>Some problems are easier to solve with recursion</li>
+                            <li>Practice with simple examples first</li>
+                        </ul>
+                    </section>
+
+                    <section id="complexity">
+                        <h2>Time Complexity</h2>
+                        <p>Time complexity measures how runtime grows as input size increases.</p>
+
+                        <h3>Common Complexities</h3>
+                        <table class="data-table">
+                            <tr>
+                                <th>Notation</th>
+                                <th>Name</th>
+                                <th>Example</th>
+                                <th>Speed</th>
+                            </tr>
+                            <tr>
+                                <td>O(1)</td>
+                                <td>Constant</td>
+                                <td>Accessing array element</td>
+                                <td>Very Fast</td>
+                            </tr>
+                            <tr>
+                                <td>O(log n)</td>
+                                <td>Logarithmic</td>
+                                <td>Binary search</td>
+                                <td>Fast</td>
+                            </tr>
+                            <tr>
+                                <td>O(n)</td>
+                                <td>Linear</td>
+                                <td>Linear search</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <td>O(n log n)</td>
+                                <td>Linearithmic</td>
+                                <td>Merge sort, Quick sort</td>
+                                <td>Acceptable</td>
+                            </tr>
+                            <tr>
+                                <td>O(n)</td>
+                                <td>Quadratic</td>
+                                <td>Bubble sort</td>
+                                <td>Slow</td>
+                            </tr>
+                            <tr>
+                                <td>O(2^n)</td>
+                                <td>Exponential</td>
+                                <td>Fibonacci recursion</td>
+                                <td>Very Slow</td>
+                            </tr>
+                        </table>
+
+                        <h3>Examples</h3>
+                        <div class="code-block">
+// O(1) - Constant time
+int getFirst(int arr[]) {
+    return arr[0];  // Always takes same time
+}
+
+// O(n) - Linear time
+int sum(int arr[], int n) {
+    int total = 0;
+    for(int i = 0; i < n; i++) {
+        total += arr[i];
+    }
+    return total;  // Time grows with n
+}
+
+// O(n) - Quadratic time
+void printPairs(int arr[], int n) {
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cout << arr[i] << "," << arr[j] << endl;
+        }
+    }  // Nested loops = n  n operations
+}
+
+// O(log n) - Logarithmic time
+int binarySearch(int arr[], int n, int x) {
+    // Divides search space in half each time
+    // Much faster than O(n)
+}
+                        </div>
+
+                        <h3>How to Calculate Complexity</h3>
+                        <ul>
+                            <li>Count loops: One loop = O(n), nested loops = O(n)</li>
+                            <li>Drop constants: O(2n) becomes O(n)</li>
+                            <li>Keep dominant term: O(n + n) becomes O(n)</li>
+                            <li>Recursive functions need careful analysis</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Programming Study Hub - Educational Resource for Students</p>
+            <p>2024</p>
+        </div>
+    </footer>
+</body>
+</html>
