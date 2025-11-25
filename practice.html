@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Problems - Programming Study Hub</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/practice.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="site-title">Programming Study Hub</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="cpp.html">C++ Basics</a>
+                <a href="algorithms.html">Algorithms</a>
+                <a href="web-dev.html">Web Development</a>
+                <a href="practice.html">Practice Problems</a>
+                <a href="cheatsheet.html">Cheat Sheet</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Practice Problems</h1>
+                <p>Test your skills with these coding challenges</p>
+            </div>
+        </section>
+
+        <section class="filters">
+            <div class="container">
+                <button class="filter-btn active" data-level="all">All Levels</button>
+                <button class="filter-btn" data-level="easy">Easy</button>
+                <button class="filter-btn" data-level="medium">Medium</button>
+                <button class="filter-btn" data-level="hard">Hard</button>
+            </div>
+        </section>
+
+        <section class="problems">
+            <div class="container">
+                <h2>Array Problems</h2>
+                <div class="problem-list">
+                    <div class="problem-card" data-level="easy">
+                        <div class="problem-header">
+                            <h3>Sum of Array Elements</h3>
+                            <span class="badge easy">Easy</span>
+                        </div>
+                        <p>Calculate the sum of all elements in an array.</p>
+                        <div class="problem-details">
+                            <span> Input/Output</span>
+                            <span> 5 mins</span>
+                        </div>
+                        <a href="problems/sum-array.html" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="easy">
+                        <div class="problem-header">
+                            <h3>Find Maximum</h3>
+                            <span class="badge easy">Easy</span>
+                        </div>
+                        <p>Find the maximum element in an array and its position.</p>
+                        <div class="problem-details">
+                            <span> Array Traversal</span>
+                            <span> 10 mins</span>
+                        </div>
+                        <a href="problems/find-max.html" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="easy">
+                        <div class="problem-header">
+                            <h3>Reverse Array</h3>
+                            <span class="badge easy">Easy</span>
+                        </div>
+                        <p>Reverse the elements of an array in place.</p>
+                        <div class="problem-details">
+                            <span> Two Pointers</span>
+                            <span> 10 mins</span>
+                        </div>
+                        <a href="problems/reverse-array.html" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="medium">
+                        <div class="problem-header">
+                            <h3>Remove Duplicates</h3>
+                            <span class="badge medium">Medium</span>
+                        </div>
+                        <p>Remove duplicate elements from a sorted array.</p>
+                        <div class="problem-details">
+                            <span> Array Manipulation</span>
+                            <span> 15 mins</span>
+                        </div>
+                        <a href="problems/remove-duplicates.html" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="medium">
+                        <div class="problem-header">
+                            <h3>Rotate Array</h3>
+                            <span class="badge medium">Medium</span>
+                        </div>
+                        <p>Rotate array elements to the right by k positions.</p>
+                        <div class="problem-details">
+                            <span> Array Rotation</span>
+                            <span> 20 mins</span>
+                        </div>
+                        <a href="problems/rotate-array.html" class="btn">Solve Problem</a>
+                    </div>
+                </div>
+
+                <h2>String Problems</h2>
+                <div class="problem-list">
+                    <div class="problem-card" data-level="easy">
+                        <div class="problem-header">
+                            <h3>Palindrome Check</h3>
+                            <span class="badge easy">Easy</span>
+                        </div>
+                        <p>Check if a given string is a palindrome.</p>
+                        <div class="problem-details">
+                            <span> String Comparison</span>
+                            <span> 10 mins</span>
+                        </div>
+                        <a href="problems/palindrome.html" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="easy">
+                        <div class="problem-header">
+                            <h3>Count Vowels</h3>
+                            <span class="badge easy">Easy</span>
+                        </div>
+                        <p>Count the number of vowels in a string.</p>
+                        <div class="problem-details">
+                            <span> String Traversal</span>
+                            <span> 10 mins</span>
+                        </div>
+                        <a href="problems/count-vowels.html" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="medium">
+                        <div class="problem-header">
+                            <h3>Anagram Check</h3>
+                            <span class="badge medium">Medium</span>
+                        </div>
+                        <p>Check if two strings are anagrams of each other.</p>
+                        <div class="problem-details">
+                            <span> Sorting/Hashing</span>
+                            <span> 15 mins</span>
+                        </div>
+                        <a href="problems/anagram.html" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="hard">
+                        <div class="problem-header">
+                            <h3>Longest Palindrome Substring</h3>
+                            <span class="badge hard">Hard</span>
+                        </div>
+                        <p>Find the longest palindromic substring in a string.</p>
+                        <div class="problem-details">
+                            <span> Dynamic Programming</span>
+                            <span> 30 mins</span>
+                        </div>
+                        <a href="problems/longest-palindrome.html" class="btn">Solve Problem</a>
+                    </div>
+                </div>
+
+                <h2>Recursion Problems</h2>
+                <div class="problem-list">
+                    <div class="problem-card" data-level="easy">
+                        <div class="problem-header">
+                            <h3>Factorial</h3>
+                            <span class="badge easy">Easy</span>
+                        </div>
+                        <p>Calculate factorial of a number using recursion.</p>
+                        <div class="problem-details">
+                            <span> Basic Recursion</span>
+                            <span> 10 mins</span>
+                        </div>
+                        <a href="problems/factorial.html" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="easy">
+                        <div class="problem-header">
+                            <h3>Fibonacci Number</h3>
+                            <span class="badge easy">Easy</span>
+                        </div>
+                        <p>Find the nth Fibonacci number using recursion.</p>
+                        <div class="problem-details">
+                            <span> Recursion</span>
+                            <span> 10 mins</span>
+                        </div>
+                        <a href="problems/fibonacci.html" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="medium">
+                        <div class="problem-header">
+                            <h3>Tower of Hanoi</h3>
+                            <span class="badge medium">Medium</span>
+                        </div>
+                        <p>Solve the classic Tower of Hanoi puzzle.</p>
+                        <div class="problem-details">
+                            <span> Recursion</span>
+                            <span> 25 mins</span>
+                        </div>
+                        <a href="problems/hanoi.ht ml" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="hard">
+                        <div class="problem-header">
+                            <h3>Generate Permutations</h3>
+                            <span class="badge hard">Hard</span>
+                        </div>
+                        <p>Generate all permutations of a given array.</p>
+                        <div class="problem-details">
+                            <span> Backtracking</span>
+                            <span> 35 mins</span>
+                        </div>
+                        <a href="problems/permutations.html" class="btn">Solve Problem</a>
+                    </div>
+                </div>
+
+                <h2>Sorting & Searching</h2>
+                <div class="problem-list">
+                    <div class="problem-card" data-level="medium">
+                        <div class="problem-header">
+                            <h3>Implement Bubble Sort</h3>
+                            <span class="badge medium">Medium</span>
+                        </div>
+                        <p>Write bubble sort algorithm from scratch.</p>
+                        <div class="problem-details">
+                            <span> Sorting</span>
+                            <span> 20 mins</span>
+                        </div>
+                        <a href="problems/bubble-sort.html" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="medium">
+                        <div class="problem-header">
+                            <h3>Binary Search</h3>
+                            <span class="badge medium">Medium</span>
+                        </div>
+                        <p>Implement binary search on a sorted array.</p>
+                        <div class="problem-details">
+                            <span> Searching</span>
+                            <span> 15 mins</span>
+                        </div>
+                        <a href="problems/binary-search.html" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="hard">
+                        <div class="problem-header">
+                            <h3>Quick Sort</h3>
+                            <span class="badge hard">Hard</span>
+                        </div>
+                        <p>Implement the quick sort algorithm.</p>
+                        <div class="problem-details">
+                            <span> Divide & Conquer</span>
+                            <span> 30 mins</span>
+                        </div>
+                        <a href="problems/quick-sort.html" class="btn">Solve Problem</a>
+                    </div>
+
+                    <div class="problem-card" data-level="hard">
+                        <div class="problem-header">
+                            <h3>Merge Two Sorted Arrays</h3>
+                            <span class="badge hard">Hard</span>
+                        </div>
+                        <p>Merge two sorted arrays into one sorted array.</p>
+                        <div class="problem-details">
+                            <span> Two Pointers</span>
+                            <span> 25 mins</span>
+                        </div>
+                        <a href="problems/merge-sorted.html" class="btn">Solve Problem</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Programming Study Hub - Educational Resource for Students</p>
+            <p>2
